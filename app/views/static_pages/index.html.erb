@@ -1,0 +1,22 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_with url: root_path, method: :get do |form| %>
+  <%= form.label :uid, 'User ID' %>
+  <%= form.text_field :uid %>
+  <%= form.submit "Search User" %>
+<% end %>
+
+<% if @photos %>
+  <% @photos.each do |photo| %>
+    <% photo_url = "https://live.staticflickr.com/#{photo['server']}/#{photo['id']}_#{photo['secret']}.jpg" %>
+    <a href= <%= photo_url %> >
+      <img src= <%= photo_url %> alt= <%= 'user photo' %> > 
+    </a> 
+  <% end %>
+<% else %>
+  <small><i>No Photos Available</i></small>
+<% end %>
