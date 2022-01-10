@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
 
   def user_photos
     begin
-      @photos = Flickr.new
+      @photos = Flickr.new(ENV['API_KEY'], ENV['SECRET'])
                       .people
                       .getPhotos api_key: ENV['API_KEY'],
                                 user_id: params[:uid]

@@ -6,16 +6,17 @@
 
 <%= form_with url: root_path, method: :get do |form| %>
   <%= form.label :uid, 'User ID' %>
-  <%= form.text_field :uid %>
+  <%= form.text_field :uid, placeholder: 'User ID' %>
   <%= form.submit "Search User" %>
 <% end %>
-
+<br>
 <% if @photos %>
   <% @photos.each do |photo| %>
     <% photo_url = "https://live.staticflickr.com/#{photo['server']}/#{photo['id']}_#{photo['secret']}.jpg" %>
     <a href= <%= photo_url %> >
       <img src= <%= photo_url %> alt= <%= 'user photo' %> > 
     </a> 
+    <br>
   <% end %>
 <% else %>
   <small><i>No Photos Available</i></small>
