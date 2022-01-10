@@ -5,9 +5,9 @@
 <% end %>
 
 <%= form_with url: root_path, method: :get do |form| %>
-  <%= form.label :uid, 'User ID' %>
-  <%= form.text_field :uid, placeholder: 'User ID' %>
-  <%= form.submit "Search User" %>
+  <%= form.text_field :uid, placeholder: 'Flickr User ID' %>
+  <%= form.submit "Search User Photos" %>
+  <%= link_to 'Clear Search', root_path %>
 <% end %>
 <br>
 <% if @photos %>
