@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Static Pages Controllers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @static_pages_controllers.each do |static_pages_controller| %>
+      <tr>
+        <td><%= link_to 'Show', static_pages_controller %></td>
+        <td><%= link_to 'Edit', edit_static_pages_controller_path(static_pages_controller) %></td>
+        <td><%= link_to 'Destroy', static_pages_controller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Static Pages Controller', new_static_pages_controller_path %>
